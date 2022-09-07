@@ -36,6 +36,8 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
+
+    scale: 0.8;
 }
 
 .grid {
