@@ -1,0 +1,147 @@
+$moderate-violet: hsl(263, 55%, 52%);
+$very-dark-grayish-blue: hsl(217, 19%, 35%);
+$very-dark-blackish-blue: hsl(219, 29%, 14%);
+$white: hsl(0, 0%, 100%);
+$light-gray: hsl(0, 0%, 81%);
+$light-grayish-blue: hsl(210, 46%, 95%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: $light-grayish-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.span-row-2 {
+    grid-row: span 2;
+}
+
+.span-column-2 {
+    grid-column: span 2;
+}
+
+.container {
+    width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.grid {
+    border-radius: 8px;
+    background: $white;
+    padding: 30px 32px;
+    color: $white;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &:nth-child(1) {
+        background: $moderate-violet;
+        position: relative;
+
+        h2 {
+            z-index: 1;
+        }
+    }
+    
+    &:nth-child(2) {
+        background: $very-dark-grayish-blue;
+    }
+    
+    &:nth-child(3),
+    &:nth-child(4) {
+        color: $very-dark-grayish-blue;
+    }
+    
+    &:nth-child(5) {
+        background: $very-dark-blackish-blue;
+    }
+
+    &__quote {
+        position: absolute;
+        top: 0;
+        right: 80px;
+        
+        img {
+            width: 100px;
+            height: 110px;
+        }
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+
+        &__img {
+            width: 30px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 1px solid $white;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__info {
+            h2 {
+                font-size: 15px;
+            }
+
+            p {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        h2 {
+            font-size: 20px;
+            // font-weight: 600;
+        }
+
+        p {
+            opacity: 0.5;
+            line-height: 1.3;
+        }
+    }
+}
+
+.attribution {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 11px;
+    text-align: center;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+  }
+  .attribution a {
+    color: hsl(228deg, 45%, 44%);
+  }
+  .attribution h1 {
+    display: inline;
+    font-size: 11px;
+    font-weight: normal;
+  }
